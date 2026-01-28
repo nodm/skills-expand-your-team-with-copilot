@@ -554,13 +554,13 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       <div class="social-share">
         <span class="share-label">Share:</span>
-        <button class="share-button facebook-share" data-activity="${name}" data-description="${details.description}" data-schedule="${formattedSchedule}" title="Share on Facebook">
+        <button class="share-button facebook-share" aria-label="Share on Facebook" title="Share on Facebook">
           📘
         </button>
-        <button class="share-button twitter-share" data-activity="${name}" data-description="${details.description}" data-schedule="${formattedSchedule}" title="Share on Twitter">
+        <button class="share-button twitter-share" aria-label="Share on Twitter" title="Share on Twitter">
           🐦
         </button>
-        <button class="share-button email-share" data-activity="${name}" data-description="${details.description}" data-schedule="${formattedSchedule}" title="Share via Email">
+        <button class="share-button email-share" aria-label="Share via Email" title="Share via Email">
           ✉️
         </button>
       </div>
@@ -910,6 +910,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const body = encodeURIComponent(`Hi,\n\nI wanted to share this activity with you:\n\n${activityName}\n${description}\nSchedule: ${schedule}\n\nCheck it out at: ${pageUrl}\n\n- Sent from Mergington High School Activities`);
         shareUrl = `mailto:?subject=${subject}&body=${body}`;
         window.location.href = shareUrl;
+        break;
+
+      default:
+        console.error(`Unknown sharing platform: ${platform}`);
         break;
     }
   }

@@ -307,16 +307,19 @@ section h3 {
 .facebook-share:hover {
   background-color: #1877f2;
   border-color: #1877f2;
+  filter: brightness(1.2);
 }
 
 .twitter-share:hover {
   background-color: #1da1f2;
   border-color: #1da1f2;
+  filter: brightness(1.2);
 }
 
 .email-share:hover {
   background-color: var(--secondary);
   border-color: var(--secondary);
+  filter: brightness(1.2);
 }
 
 /* Buttons */
